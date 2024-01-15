@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'db_conn.php';
+include '../db/db_conn.php';
+
 
 if(isset($_POST['curp']) ){
     $curp = $_POST['curp'];
@@ -8,7 +9,9 @@ if(isset($_POST['curp']) ){
     if(empty($curp)) {
         header("Location: login.php?error=CURP is required");
         exit();
-    } else {
+    } 
+    
+    else {
         $stmt = $conn->prepare("SELECT * FROM galardonados WHERE curp=?");
         $stmt->execute([$curp]);
         if($stmt->rowCount() === 1){
@@ -34,26 +37,35 @@ if(isset($_POST['curp']) ){
                 $_SESSION['user_company'] = $user_company;
 
                 if(is_null($user_is_asisting)) {
-                    if(is_null($user_company)){
-                        header("Location: askCompany.php");
-                    } else {
+                    
+                    if(is_null($user_company)) {
+                        header("Location: ../views/askCompany.php");
+                    }   
+                    
+                    else {
                         header("Location: askCompany.php?error=idk man");
                     }
-                    header("Location: confirmAsistance.php");
-                } else {
-                    header("Location: result.php");
+                    header("Location: ../views/confirmAsistance.php");
+                } 
+                
+                else {
+                    header("Location: ../views/result.php");
                 }
-            } else {
+            } 
+            
+            else {
                 header("Location: login.php?error=Invalid CURP");
                 exit();
             }
 
-        } else {
+        }   else {
             header("Location: login.php?error=CURP not found");
             exit();
         }
     }
-} else {
+}   
+
+else {
     header("Location: login.php?error=CURP is required");
     exit();
 }
