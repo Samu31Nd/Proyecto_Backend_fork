@@ -1,10 +1,9 @@
 <?php include './views/templates/header.php'; ?>
 
     <!-- main div -->
-    <div class = "d-flex justify-content-center align-items-center __centered">
+    <div class = "d-flex justify-content-center align-items-center mt-5">
         
-        <form class="p-3 rounded shadow __regist-form"
-        action="./controllers/auth.php" method="post">
+        <form class="p-3 rounded shadow __regist-form" action="./controllers/auth.php" method="post">
         <div class="container">
             <div class="row">
                 <div class="d-flex justify-content-center align-items-center col-sm-6 text-center">
@@ -12,10 +11,10 @@
                 </div>
 
                 <div class="col-sm-6">
-                    <h1 class="text-center pb-5 display-6">Registro al evento</h1>
+                    <h1 class="text-center fw-semibold pb-5 display-6">Registro al evento</h1>
                     <p>
                         Se les hace una coordial invitación al evento de distinciones <br>
-                        Si has sido invitado al evento, ingresa tu CURP:
+                        Si has sido invitador, por favor, ingresa tu CURP:
                     </p>
 
                     <div class="mb-3">
