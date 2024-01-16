@@ -1,6 +1,6 @@
 
 body {
-    background-color: #dadada;
+    background-color: #c7615d;
 }
 
 .__centered {
@@ -24,4 +24,9 @@ body {
 /** Carrusel **/
 .carousel-item img {
     opacity: 0.8;
+}
+
+.__navbar {
+    height:65px;
+    background-color: #221330;
 }

@@ -1,5 +1,20 @@
 <?php
-    require_once './config/confg.php';
+try {
+    if(! @include_once   './config/confg.php')
+        throw new Exception();
+    if (!file_exists('./config/confg.php'))
+    throw new Exception(); else {
+        $root_dir='.';
+    }
+} catch (Exception) {
+    if(! @include_once   '../config/confg.php')
+        throw new Exception();
+    if (!file_exists('../config/confg.php'))
+    throw new Exception(); else {
+        $root_dir='..';
+    }
+    require_once   $root_dir.'/config/confg.php';
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +25,9 @@
     <title>Registro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<?php echo SRC . 'css/main.css'; ?>" />  
+    <link rel="stylesheet" type="text/css" href="/<?php echo $CARPET_NAME ?>/src/css/main.css" />  
 </head>
-    <nav class="shadow-sm navbar navbar-expand-lg" data-bs-theme="dark" style="height:100px; background-color: #004B8E;">
+    <nav class="shadow-sm navbar navbar-expand-lg __navbar" data-bs-theme="dark">
         <div class="container-fluid">
         <a class="navbar-brand" href="index.php">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

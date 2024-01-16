@@ -1,2 +1,3 @@
+<?php include './templates/header.php'; ?>
+
 <?php
-echo "Asking company lmao";

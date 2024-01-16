@@ -8,4 +8,5 @@ define('CONTROLLERS', ROOT.'controllers'.DS);
 define('DB', ROOT.'db'.DS);
 define('SRC', ROOT.'src'.DS);
 
+$CARPET_NAME='Proyecto_backend_fork';
 ?>
